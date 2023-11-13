@@ -9,8 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.14.17",
     "next": "14.0.1",
     "react": "^18",
+    "react-beautiful-dnd": "^13.1.1",
     "react-dom": "^18"
   },
   "devDependencies": {
@@ -26,7 +30,9 @@
     "eslint-config-next": "^14.0.1",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.3.0",
     "typescript": "^5"
   }
 }
