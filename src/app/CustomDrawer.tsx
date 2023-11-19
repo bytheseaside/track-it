@@ -160,7 +160,7 @@ const CustomDrawer: React.FC<PropsWithChildren> = ({ children }) => {
             <ListItem key={label} disablePadding>
               <Box
                 component={Link}
-                sx={{ textDecoration: 'none', color: 'inherit' }}
+                sx={{ textDecoration: 'none', color: 'inherit', width: '100%' }}
                 href={href}
                 passHref
               >
