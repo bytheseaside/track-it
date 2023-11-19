@@ -11,7 +11,6 @@ export const metadata: Metadata = {
     width: 'device-width',
     initialScale: 1,
   },
-  themeColor: '#5C7D79',
   icons: '/icons/favicon.png',
 };
 
@@ -20,6 +19,7 @@ export default function Layout({ children }: PropsWithChildren) {
     <html lang="en">
       <head>
         <meta httpEquiv="Content-Type" content="text/html" charSet="utf-8" />
+        <meta name="theme-color" content="#5C7D79" />
       </head>
       <body>
         <CustomThemeProvider>
