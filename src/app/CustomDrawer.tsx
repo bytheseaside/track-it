@@ -2,10 +2,10 @@
 
 import React, { PropsWithChildren, useState } from 'react';
 
+import AccessAlarmsIcon from '@mui/icons-material/AccessAlarms';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
+import TaskIcon from '@mui/icons-material/Task';
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
@@ -17,10 +17,11 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Stack from '@mui/material/Stack';
-import { styled, useTheme } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const drawerWidth = 240;
 
@@ -72,8 +73,23 @@ const DrawerHeader = styled('div')(({ theme }) => ({
   justifyContent: 'flex-end',
 }));
 
+type Tab = {
+  label: string;
+  icon: React.ReactNode;
+  href: string;
+};
+
+const tabs: Tab[] = [{
+  label: 'Dashboard',
+  icon: <TaskIcon />,
+  href: '/',
+}, {
+  label: 'Timer',
+  icon: <AccessAlarmsIcon />,
+  href: '/timer',
+}];
+
 const CustomDrawer: React.FC<PropsWithChildren> = ({ children }) => {
-  const theme = useTheme();
   const [open, setOpen] = useState(false);
 
   const handleDrawerOpen = () => {
@@ -140,14 +156,21 @@ const CustomDrawer: React.FC<PropsWithChildren> = ({ children }) => {
         </DrawerHeader>
         <Divider />
         <List>
-          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-            <ListItem key={text} disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItemButton>
+          {tabs.map(({ label, icon, href }) => (
+            <ListItem key={label} disablePadding>
+              <Box
+                component={Link}
+                sx={{ textDecoration: 'none', color: 'inherit' }}
+                href={href}
+                passHref
+              >
+                <ListItemButton>
+                  <ListItemIcon>
+                    {icon}
+                  </ListItemIcon>
+                  <ListItemText primary={label} />
+                </ListItemButton>
+              </Box>
             </ListItem>
           ))}
         </List>
