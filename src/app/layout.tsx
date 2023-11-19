@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     initialScale: 1,
   },
   themeColor: '#5C7D79',
+  icons: '/icons/favicon.png',
 };
 
 export default function Layout({ children }: PropsWithChildren) {
