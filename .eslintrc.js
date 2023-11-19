@@ -80,5 +80,11 @@ module.exports = {
       ].flat(),
     }],
     'react-hooks/exhaustive-deps': 'off',
+    "no-restricted-imports": [
+      "error",
+      {
+        "patterns": ["@material-ui/*/*/*"]
+      }
+    ]
   },
 };
