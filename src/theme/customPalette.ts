@@ -1,12 +1,15 @@
 const customPalette = {
   palette: {
     primary: {
-      main: '#7043B3',
+      main: '#A9E5DD',
     },
     secondary: {
-      main: '#86b343',
+      main: '#FF7EAC',
     },
-    contrastThreshold: 4,
+    background: {
+      default: '#fbfcfd',
+    },
+    contrastThreshold: 5,
     tonalOffset: 0.3,
   },
 };

@@ -4,7 +4,6 @@ import React, { PropsWithChildren } from 'react';
 
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider } from '@mui/material/styles';
-import useMediaQuery from '@mui/material/useMediaQuery';
 
 import theme from './theme';
 
