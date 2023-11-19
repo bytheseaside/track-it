@@ -7,7 +7,7 @@ const customPalette = {
       main: '#FF7EAC',
     },
     background: {
-      default: '#fbfcfd',
+      default: '#f2f2f2',
     },
     contrastThreshold: 5,
     tonalOffset: 0.3,
