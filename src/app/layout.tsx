@@ -3,6 +3,7 @@ import React, { PropsWithChildren } from 'react';
 import { Metadata } from 'next';
 
 import CustomDrawer from './CustomDrawer';
+import ShouldTakeBreak from './ShouldTakeBreak';
 import CustomThemeProvider from '../theme';
 
 export const metadata: Metadata = {
@@ -26,6 +27,7 @@ export default function Layout({ children }: PropsWithChildren) {
         <CustomThemeProvider>
           <CustomDrawer>
             {children}
+            <ShouldTakeBreak />
           </CustomDrawer>
         </CustomThemeProvider>
       </body>
