@@ -1,7 +1,8 @@
-import { PropsWithChildren } from 'react';
+import React, { PropsWithChildren } from 'react';
 
 import { Metadata } from 'next';
 
+import CustomDrawer from './CustomDrawer';
 import CustomThemeProvider from '../theme';
 
 export const metadata: Metadata = {
@@ -23,7 +24,9 @@ export default function Layout({ children }: PropsWithChildren) {
       </head>
       <body>
         <CustomThemeProvider>
-          {children}
+          <CustomDrawer>
+            {children}
+          </CustomDrawer>
         </CustomThemeProvider>
       </body>
     </html>
