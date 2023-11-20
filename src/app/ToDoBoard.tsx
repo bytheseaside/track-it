@@ -18,8 +18,11 @@ import Typography from '@mui/material/Typography';
 const MIN_LENGTH = 5;
 
 type Task = {
+  // eslint-disable-next-line react/no-unused-prop-types
   content: string;
+  // eslint-disable-next-line react/no-unused-prop-types
   completed: boolean;
+  // eslint-disable-next-line react/no-unused-prop-types
   id: string;
 };
 
