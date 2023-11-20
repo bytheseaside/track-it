@@ -57,14 +57,16 @@ const ShouldTakeBreak: React.FC = () => {
         <Box sx={{
           display: 'flex',
           flexDirection: 'column',
+          gap: 2,
+          alignItems: 'center',
           position: 'absolute',
           top: '50%',
           left: '50%',
           transform: 'translate(-50%, -50%)',
           width: { xxs: 'fit-content', sm: '100%' },
           maxWidth: { xxs: '100%', sm: 700 },
-          bgcolor: '#435957',
-          color: 'common.white',
+          bgcolor: 'background.paper',
+          borderRadius: 2,
           border: '2px solid',
           borderColor: 'primary.dark',
           boxShadow: 24,
@@ -74,43 +76,38 @@ const ShouldTakeBreak: React.FC = () => {
           <Typography id="should-take-break-modal" variant="h6" component="h2">
             Should you take a break from your task?
           </Typography>
-          <Box
-            sx={{
-              display: 'flex',
-              flexDirection: { xxs: 'column', sm: 'row' },
-              gap: { xxs: 2, sm: 4 },
-            }}
+          <Typography
+            id="random-answer-for-should-take-break"
+            color="primary.dark"
+            sx={{ textAlign: 'center' }}
           >
+            Let&apos;s see...
+            <br />
             <Typography
-              id="random-answer-for-should-take-break"
-              color="primary.main"
-              sx={{ display: 'inline' }}
+              variant="h6"
+              component="span"
             >
-              Let&apos;s see...
-              {' '}
-              {
-                luckyAnswer?.answer === 'yes'
-                  ? 'Go for it'
-                  : luckyAnswer?.answer === 'no'
-                    ? 'Go back to work NOW!'
-                    : 'You choose'
-              }
+              {luckyAnswer?.answer === 'yes'
+                ? 'Go for it'
+                : luckyAnswer?.answer === 'no'
+                  ? 'Go back to work NOW!'
+                  : 'You choose'}
             </Typography>
-            <Box>
-              <Box
-                sx={{
-                  position: 'relative',
-                  height: 200,
-                  width: 200,
-                }}
-              >
-                <Image
-                  src={luckyAnswer?.image}
-                  alt={luckyAnswer?.answer ? 'yes image' : 'no image'}
-                  fill
-                  sizes="100%"
-                />
-              </Box>
+          </Typography>
+          <Box>
+            <Box
+              sx={{
+                position: 'relative',
+                height: 200,
+                width: 200,
+              }}
+            >
+              <Image
+                src={luckyAnswer?.image}
+                alt={luckyAnswer?.answer ? 'yes image' : 'no image'}
+                fill
+                sizes="100%"
+              />
             </Box>
           </Box>
         </Box>
