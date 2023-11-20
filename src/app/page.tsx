@@ -1,13 +1,9 @@
 import React from 'react';
 
-import Board from './Board';
-import ShouldTakeBreak from './ShouldTakeBreak';
+import ToDoBoard from './ToDoBoard';
 
 export default function Home() {
   return (
-    <>
-      <Board />
-      <ShouldTakeBreak />
-    </ >
+    <ToDoBoard />
   );
 }
